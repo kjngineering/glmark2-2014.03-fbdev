@@ -38,9 +38,9 @@ def list_contains(lst, token):
     return False
 
 def options(opt):
-    opt.tool_options('gnu_dirs')
-    opt.tool_options('compiler_cc')
-    opt.tool_options('compiler_cxx')
+    opt.load('gnu_dirs')
+    opt.load('compiler_cc')
+    opt.load('compiler_cxx')
 
     opt.add_option('--with-flavors', type = 'string', action='callback',
                    callback=option_list_cb,
@@ -78,9 +78,9 @@ def configure(ctx):
         if flavor in Options.options.flavors:
             ctx.env["FLAVOR_%s" % flavor.upper().replace('-','_')] = FLAVORS[flavor]
 
-    ctx.check_tool('gnu_dirs')
-    ctx.check_tool('compiler_cc')
-    ctx.check_tool('compiler_cxx')
+    ctx.load('gnu_dirs')
+    ctx.load('compiler_c')
+    ctx.load('compiler_cxx')
 
     # Check required headers
     req_headers = ['stdlib.h', 'string.h', 'unistd.h', 'stdint.h', 'stdio.h', 'jpeglib.h']

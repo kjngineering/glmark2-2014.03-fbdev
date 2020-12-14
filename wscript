@@ -1,8 +1,9 @@
-import commands
-import subprocess
-import os
-import Options
-import Scripting
+#import commands
+#import subprocess
+import os, platform
+#import Options
+#import Scripting
+
 from waflib import Context
 
 out = 'build'

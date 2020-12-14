@@ -39,7 +39,7 @@ def list_contains(lst, token):
 
 def options(opt):
     opt.load('gnu_dirs')
-    opt.load('compiler_cc')
+    opt.load('compiler_c')
     opt.load('compiler_cxx')
 
     opt.add_option('--with-flavors', type = 'string', action='callback',
